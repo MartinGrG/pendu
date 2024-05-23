@@ -53,8 +53,11 @@ def demande_lettre(guess,tentatives):
     if guess == '': #L'utilisateur n'a rien écrit
         print("Tu n'as rien écrit")
         return(True)
+    elif guess.isdigit():  #L'tutilisateur a entré un chiffre
+        print("Tu as entré un chiffre")
+        return (True)
     if len(guess) > 1: #L'utilisateur a écrit plusieurs lettres
-        print("Tu as rentré plusieurs lettres")
+        print("Tu as entré plusieurs lettres")
         return True
     elif guess in tentatives: #L'utilisateur a déjà porposé cette lettre
         print("Tu as déjà proposé cette letttre")
@@ -77,8 +80,13 @@ def pendu(liste_lettres):
     reponse = []
     tentatives = []
     for i in range(len(liste_lettres)):
-        #Construction du mot composé de tirés
-        reponse.append("_")
+        # Construction du mot composé de tirés
+        #Test si le mot contient un - ou une '
+        if liste_lettres[i] == '-' or liste_lettres[i] == "'":
+            #Si oui on les affiches
+            reponse.append(liste_lettres[i])
+        else:
+            reponse.append("_")
 
     while vie >0 and '_' in reponse:
         #Affichage du nombre de vie à l'utilisateur
@@ -94,12 +102,15 @@ def pendu(liste_lettres):
         #au joueur d'entrer une lettre
         print(''.join(reponse))
         guess = input("Entrez une lettre: ").lower()
-
+        print("")
+        print("")
 
         #Test de conformité de l'entrée
         while demande_lettre(guess,tentatives) != False:
             print(''.join(reponse))
             guess = input("Entrez une lettre: ").lower()
+            print("")
+            print("")
 
         #On stock les lettres déjà dites
         tentatives.append(guess)
