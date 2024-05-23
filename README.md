@@ -4,7 +4,7 @@ Ce projet permet de jouer au jeu du pendu. Le joueur a 6 vies afin de trouver le
 une lettre: si elle fait partie du mot, bien joué il faut trouver les autres; si elle n'en fait pas partie le joueur perd une vie.
 Le jeu s'arrête lorsque le joueur a trouvé toutes les lettres du mot caché ou lorsqu'il n'a plus de vie.  
 Dans le cas où il ne lui reste plus qu'une vie, le joueur obtient un indice: une lettre qui n'est pas dans le mot.  
-Un mot caché est représentépar les lettres déjà trouvées et avec des '_', exemple: abeille -> a_e___e. Ici la lettre a et e ont été trouvées.
+Un mot caché est représentépar les lettres déjà trouvées et avec des '_', exemple: abeille -> a_e___e. Ici les lettres a et e ont été trouvées.
 
 ### Utilisation:
 Afin de jouer il suffit de télécharger le dossier, ourvrir "main.py" et run le programme.
